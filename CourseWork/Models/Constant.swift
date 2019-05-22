@@ -1,0 +1,15 @@
+//
+//  Constant.swift
+//  CourseWork
+//
+//  Created by Айрат Туктамышев on 22/05/2019.
+//  Copyright © 2019 Айрат Туктамышев. All rights reserved.
+//
+
+import UIKit
+
+class Constant: NSObject {
+
+}
+
+let mykey="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjE4ODRhZjM2LWQ0ZTgtNDQyOC05YzU4LTUyNmZlZmRkOWIxNCIsImlhdCI6MTU1ODUyMDgzOCwic3ViIjoiZGV2ZWxvcGVyLzIwZDQ4ODAwLTkzOTYtNmRmNS0xMGUzLWQxODQ3Njg1OTU1MiIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyI4NS4yNi4yMzMuMTcxIl0sInR5cGUiOiJjbGllbnQifV19.kveQARUaykIs5Vg0ZqcSx6UFde_bzqoveVQTmVKtvtErzWwfbeiNeFpSS-u4w5G_sDBGWn2Ob6Qd7lYqlKzcdA"
