@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CardsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
     
@@ -23,7 +24,13 @@ class CardsViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //запись из реалм
+        
         loadCardJSON()
+        //запись в реалм
+        //вывод на экран
+        //релоад дата
         
     }
     
@@ -62,23 +69,29 @@ class CardsViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell" )as? CardCell else {return UITableViewCell() }
         cell.levelLabel.text = "Max level:" + String(mycards[indexPath.row].maxLevel)
         cell.nameLabel.text="Name: "+mycards[indexPath.row].name
+        
 
         if let imageUrl=URL(string: mycards[indexPath.row].iconUrls.medium){
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: imageUrl)
-                if let data=data{
-                    let image=UIImage(data:data)
-                    DispatchQueue.main.async {
-                        cell.imageCard.image=image
-                    }
-                }
+            cell.imageCard.kf.indicatorType = .activity
+            cell.imageCard.kf.setImage(with:imageUrl, placeholder: nil, options: [.transition(.fade(0.7))],progressBlock: nil)
             }
-        }
+        
+        
+        
+//        if let imageUrl=URL(string: mycards[indexPath.row].iconUrls.medium){
+//            DispatchQueue.global().async {
+//                let data = try? Data(contentsOf: imageUrl)
+//                if let data=data{
+//                    let image=UIImage(data:data)
+//                    DispatchQueue.main.async {
+//                        cell.imageCard.image=image
+//                    }
+//                }
+//            }
+//        }
         return cell
 
     }

@@ -42,20 +42,26 @@ class MyCardViewController: UIViewController, UITableViewDelegate,UITableViewDat
         
          cell.countLabel.text="Количество:"+String(mycards[indexPath.row].count)
         
-//
+        
+        
         if let imageUrl=URL(string: mycards[indexPath.row].iconUrls.medium){
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: imageUrl)
-                if let data=data{
-                    let image=UIImage(data:data)
-                    DispatchQueue.main.async {
-                        print("Карты работают")
-                        //cell.myCardIMG.image=image
-                        cell.myCardIMG.image=image
-                    }
-                }
-            }
+            cell.myCardIMG.kf.indicatorType = .activity
+            cell.myCardIMG.kf.setImage(with:imageUrl, placeholder: nil, options: [.transition(.fade(0.7))],progressBlock: nil)
         }
+//
+//        if let imageUrl=URL(string: mycards[indexPath.row].iconUrls.medium){
+//            DispatchQueue.global().async {
+//                let data = try? Data(contentsOf: imageUrl)
+//                if let data=data{
+//                    let image=UIImage(data:data)
+//                    DispatchQueue.main.async {
+//                        print("Карты работают")
+//                        //cell.myCardIMG.image=image
+//                        cell.myCardIMG.image=image
+//                    }
+//                }
+//            }
+//        }
         return cell
     }
     

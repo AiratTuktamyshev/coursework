@@ -13,72 +13,58 @@ class PlayersViewController: UIViewController {
     let playerURL:String="https://api.clashroyale.com/v1/players/%23YYRU08PR"
     var infoPlayer:PlayerS?
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//       if segue.identifier=="TestSeg"
-//       {
-//        if let dest = segue.destination as? TabBarViewController {
-//            dest.infoPlayer = self.infoPlayer        }
-//
-//        }
-//    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier=="PlayerSeg"
-        {
-            if let dest=segue.destination as? InfoPlayerViewController{
-                dest.myPlayer = self.infoPlayer
-            }
-        }
-        
-    }
-    
- 
-    
+    @IBOutlet weak var ActivityIND: UIActivityIndicatorView!
     @IBOutlet weak var SegButton: UIButton!
     @IBOutlet weak var testlabel: UILabel!
+    @IBOutlet weak var OKbut: UIButton!
     @IBOutlet weak var EnterTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let myPlayerUrl=playerURL+"/"
-        let playerRequest = URLRequest(url: URL(string: myPlayerUrl)!)
-        playerloadjson(req:playerRequest)        
         // Do any additional setup after loading the view.
+        print("zco")
     }
     
- 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (touches.first as UITouch?) != nil
+        {
+            view.endEditing(true)
+        }
+    }
+    
+    
     @IBAction func EnterButton(_ sender: UIButton) {
-        
         if(sender.restorationIdentifier=="OKbutton")
-        {
-            OKbutton()
-        }
-        if(sender.restorationIdentifier=="RedirectButton")
-        {
-            RedirectButton()
-        }
+                {
+                    let myPlayerUrl=playerURL+"/"
+                    let playerRequest = URLRequest(url: URL(string: myPlayerUrl)!)
+                    
+                    view.endEditing(true)//закрываем клаву
+                    
+                    playerloadjson(req:playerRequest)
+                    
+                }
     }
     
-    
-    
-    func RedirectButton(){
-        //performSegue(withIdentifier: "PlayerSeg", sender: self)
-    }
+
+
 
     
-    func OKbutton()
+  
+    
+    private func Hid()
     {
         
-        
         if infoPlayer != nil{
-            testlabel.text="Ваше имя: \(String(describing: infoPlayer?.name))"
+            testlabel.text="Ваше имя: \(String(describing: self.infoPlayer!.name))"
             SegButton.isHidden=false
         }
+        
         if infoPlayer == nil{
-            print("Ошибка загрузки")
+            SegButton.isHidden=true
         }
-        //  json делается в другом потоке
-        testlabel.text = String?(infoPlayer?.name ??  "Нет имени")
+        
+        
     }
     
     
@@ -91,27 +77,60 @@ class PlayersViewController: UIViewController {
         myrequest.httpBody=Data()
         myrequest.addValue("contentType", forHTTPHeaderField: "Application/JSON")
         myrequest.setValue( "Bearer \(mykey)",forHTTPHeaderField:"Authorization")
-        DispatchQueue.main.async {
-
-        let clashTask=URLSession.shared.dataTask(with: myrequest) { (data, response, error) in
+        
+        
+        let clashTask=URLSession.shared.dataTask(with: myrequest) { [weak self](data, response, error) in
+            guard let self = self else {return}
             if error==nil {
                 do {
-                    
-                    let json=try JSONDecoder().decode(PlayerS.self, from: data!)
+                    DispatchQueue.main.async {
+                        self.ActivityIND.startAnimating()
+
+                    }
+                     let json=try JSONDecoder().decode(PlayerS.self, from: data!)
                     self.infoPlayer=json
                     print(self.infoPlayer as Any)
+                    DispatchQueue.main.async {
+                        self.ActivityIND.startAnimating()
+                        self.Hid()
+                        
+                    }
                 }
                 catch let error {
-                    print(error)
+                        print(error)
+                    DispatchQueue.main.async {
+                        self.ActivityIND.stopAnimating()
+                        
+                    }
                 }
             }
             else {
-                print(error ?? "Неизвестная ошибка")
+                DispatchQueue.main.async {
+                    self.ActivityIND.stopAnimating()
+                    
+                }
+                
             }
+            
+            
         }
         clashTask.resume()
-        }
+
+        
     }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier=="PlayerSeg"
+        {
+            if let dest=segue.destination as? InfoPlayerViewController{
+                dest.myPlayer = self.infoPlayer
+            }
+        }
+        
+    }
+    
     
     }
     
