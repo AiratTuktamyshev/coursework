@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseWork/Controllers/CardsViewController.swift"
+            timestampString = "580660385.007161"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseWork.CardCell.levelLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "CourseWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AiratTuktamyshev/Documents/Swift/CourceWork/CourseWork/CourseWork/Controllers/CardsViewController.swift"
+                  timestampString = "580610176.3321919"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseWork.CardCell.levelLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "CourseWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AiratTuktamyshev/Documents/Swift/CourceWork/CourseWork/CourseWork/Controllers/CardsViewController.swift"
+                  timestampString = "580610176.334906"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseWork.CardCell.levelLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "CourseWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AiratTuktamyshev/Documents/Swift/CourceWork/CourseWork/CourseWork/Controllers/CardsViewController.swift"
+                  timestampString = "580610176.337593"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseWork.CardCell.levelLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CourseWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AiratTuktamyshev/Documents/Swift/CourceWork/CourseWork/CourseWork/Controllers/CardsViewController.swift"
+                  timestampString = "580610176.341058"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseWork.CardCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; CourseWork.CardCell"
+                  moduleName = "CourseWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AiratTuktamyshev/Documents/Swift/CourceWork/CourseWork/CourseWork/Controllers/CardsViewController.swift"
+                  timestampString = "580610176.344169"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "321">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CourseWork.CardCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CourseWork.CardCell&gt;"
+                  moduleName = "CourseWork"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AiratTuktamyshev/Documents/Swift/CourceWork/CourseWork/CourseWork/Controllers/CardsViewController.swift"
+                  timestampString = "580610176.348888"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "223">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseWork/Controllers/PlayersViewController.swift"
+            timestampString = "580657610.113731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "playerloadjson(req:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseWork/Controllers/PlayersViewController.swift"
+            timestampString = "580657610.114244"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseWork/Controllers/PlayersViewController.swift"
+            timestampString = "580657610.114576"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "playerloadjson(req:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CourseWork/Controllers/PlayersViewController.swift"
+            timestampString = "580657610.1149369"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "playerloadjson(req:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
