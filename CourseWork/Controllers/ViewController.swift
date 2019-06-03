@@ -7,16 +7,19 @@
 //
 
 import UIKit
-
+import RealmSwift
 class ViewController: UIViewController {
 
+    
+   let  realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+     
         // Do any additional setup after loading the view.
     }
     
-    var request = URLRequest(url: clashURL)
-
     
 }
 

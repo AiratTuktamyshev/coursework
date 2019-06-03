@@ -40,7 +40,8 @@ class InfoPlayerViewController: UIViewController {
     
     
     func labelWrite()
-    { tagLabel.text="Тэг:"+String(myPlayer!.tag)
+    {
+        tagLabel.text="Тэг:"+String(myPlayer!.tag)
         nameLabel.text="Имя:"+String(myPlayer!.name)
         levelLabel.text="Уровень:"+String(myPlayer!.expLevel)
         trophieLabel.text="Трофеи:"+String(myPlayer!.trophies)
@@ -64,9 +65,11 @@ class InfoPlayerViewController: UIViewController {
         guard let myurl=URL(string: myPlayer!.currentFavouriteCard!.iconUrls.medium)
             else {return}
         
+        
         let task = URLSession.shared.dataTask(with: myurl) { data, response, error in
             guard let data = data, error == nil
-                else { print("err1")
+                else {
+                print("error")
                 return }
             
         DispatchQueue.main.async() {    // execute on main thread

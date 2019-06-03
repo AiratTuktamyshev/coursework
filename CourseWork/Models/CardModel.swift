@@ -23,13 +23,12 @@ struct ClashCards:Decodable
     var iconUrls:Medium
     
     struct Medium:Decodable {
-        var medium:String
+        var medium:String?
     }
 }
 
 
-let clashURL=URL(string:"https://api.clashroyale.com/v1/cards/")!
-
+ 
  
             
        

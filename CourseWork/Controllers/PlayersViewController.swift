@@ -9,11 +9,13 @@
 import UIKit
 
 class PlayersViewController: UIViewController {
-   
-    let playerURL:String="https://api.clashroyale.com/v1/players/%23YYRU08PR"
-    var infoPlayer:PlayerS?
     
-    @IBOutlet weak var ActivityIND: UIActivityIndicatorView!
+    private let playerURL:String="https://api.clashroyale.com/v1/players/%23YYRU08PR"
+    var infoPlayer:PlayerS?
+
+    
+    
+    @IBOutlet weak var activityind: UIActivityIndicatorView!
     @IBOutlet weak var SegButton: UIButton!
     @IBOutlet weak var testlabel: UILabel!
     @IBOutlet weak var OKbut: UIButton!
@@ -21,8 +23,9 @@ class PlayersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         // Do any additional setup after loading the view.
-        print("zco")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -38,8 +41,8 @@ class PlayersViewController: UIViewController {
                 {
                     let myPlayerUrl=playerURL+"/"
                     let playerRequest = URLRequest(url: URL(string: myPlayerUrl)!)
-                    
                     view.endEditing(true)//закрываем клаву
+                    activityind.startAnimating()
                     
                     playerloadjson(req:playerRequest)
                     
@@ -52,71 +55,66 @@ class PlayersViewController: UIViewController {
     
   
     
-    private func Hid()
+    func Hid()
     {
-        
-        if infoPlayer != nil{
-            testlabel.text="Ваше имя: \(String(describing: self.infoPlayer!.name))"
-            SegButton.isHidden=false
+        DispatchQueue.main.async{ 
+            
+                if self.infoPlayer != nil{
+                    self.testlabel.text="Ваше имя: \(String(describing: self.infoPlayer!.name))"
+                    self.SegButton.isHidden=false
+                    self.activityind.stopAnimating()
+                }
+                if self.infoPlayer == nil{
+                    self.testlabel.text="Ошибка"
+                    self.SegButton.isHidden=true
+                    self.activityind.stopAnimating()
+                }
+            }
         }
-        
-        if infoPlayer == nil{
-            SegButton.isHidden=true
-        }
-        
-        
-    }
+
     
     
     
-    func playerloadjson( req:URLRequest) {
+    
+    
+     func playerloadjson( req:URLRequest) {
         //Распарсиваем json
         //var json:ItemsResponse!
         var myrequest=req
         myrequest.httpMethod="GET"
         myrequest.httpBody=Data()
         myrequest.addValue("contentType", forHTTPHeaderField: "Application/JSON")
-        myrequest.setValue( "Bearer \(mykey)",forHTTPHeaderField:"Authorization")
-        
+        myrequest.setValue( "Bearer \(constant.mykey)",forHTTPHeaderField:"Authorization")
         
         let clashTask=URLSession.shared.dataTask(with: myrequest) { [weak self](data, response, error) in
             guard let self = self else {return}
             if error==nil {
                 do {
-                    DispatchQueue.main.async {
-                        self.ActivityIND.startAnimating()
-
-                    }
-                     let json=try JSONDecoder().decode(PlayerS.self, from: data!)
+                    
+                    
+                    let json=try JSONDecoder().decode(PlayerS.self, from: data!)
                     self.infoPlayer=json
                     print(self.infoPlayer as Any)
-                    DispatchQueue.main.async {
-                        self.ActivityIND.startAnimating()
-                        self.Hid()
-                        
-                    }
+                    self.Hid()
+                    
+
+ 
                 }
                 catch let error {
                         print(error)
-                    DispatchQueue.main.async {
-                        self.ActivityIND.stopAnimating()
-                        
-                    }
+                    self.Hid()
+
+                    
                 }
             }
             else {
-                DispatchQueue.main.async {
-                    self.ActivityIND.stopAnimating()
-                    
-                }
-                
+                self.Hid()
+
             }
-            
             
         }
         clashTask.resume()
 
-        
     }
     
     
@@ -128,21 +126,8 @@ class PlayersViewController: UIViewController {
                 dest.myPlayer = self.infoPlayer
             }
         }
-        
     }
     
     
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+}
 

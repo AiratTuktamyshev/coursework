@@ -7,5 +7,6 @@ target 'CourseWork' do
 	
   # Pods for CourseWork
     pod 'Kingfisher', '~> 5.0'
+    pod 'RealmSwift' 
 
 end

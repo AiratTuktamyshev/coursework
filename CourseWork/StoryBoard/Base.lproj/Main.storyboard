@@ -85,10 +85,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QkZ-cp-oFX">
-                                <rect key="frame" x="197" y="438" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crop" translatesAutoresizingMaskIntoConstraints="NO" id="u8u-0E-Hyw">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </imageView>
@@ -147,6 +143,12 @@
                                     <action selector="EnterButton:" destination="0NZ-JL-lGx" eventType="touchUpInside" id="Rkk-ah-eub"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" restorationIdentifier="activityIndicator" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="C1c-m0-D6M">
+                                <rect key="frame" x="188.5" y="318" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -161,7 +163,9 @@
                             <constraint firstItem="u8u-0E-Hyw" firstAttribute="leading" secondItem="yOy-lh-YQE" secondAttribute="leading" id="EbS-F6-q2E"/>
                             <constraint firstItem="u8u-0E-Hyw" firstAttribute="bottom" secondItem="yOy-lh-YQE" secondAttribute="bottom" id="HWh-bx-tho"/>
                             <constraint firstItem="kq5-y7-6dJ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="yOy-lh-YQE" secondAttribute="leading" constant="105" id="LSz-UC-wDa"/>
+                            <constraint firstItem="C1c-m0-D6M" firstAttribute="centerX" secondItem="Awu-JT-qAb" secondAttribute="centerX" id="Zc2-Ge-Eji"/>
                             <constraint firstItem="u8u-0E-Hyw" firstAttribute="trailing" secondItem="yOy-lh-YQE" secondAttribute="trailing" id="e9C-aI-5f7"/>
+                            <constraint firstItem="C1c-m0-D6M" firstAttribute="top" secondItem="FOx-Dg-tdh" secondAttribute="bottom" constant="33.5" id="mHV-Bg-oeh"/>
                             <constraint firstItem="FOx-Dg-tdh" firstAttribute="top" secondItem="hhB-62-Crj" secondAttribute="bottom" constant="18.670000000000002" id="n1h-Lf-Fvt"/>
                             <constraint firstItem="hhB-62-Crj" firstAttribute="centerX" secondItem="Awu-JT-qAb" secondAttribute="centerX" id="nIh-ZN-CSW"/>
                             <constraint firstItem="dHD-UP-OWs" firstAttribute="centerX" secondItem="Awu-JT-qAb" secondAttribute="centerX" id="osj-zP-25M"/>
@@ -177,10 +181,10 @@
                         <viewLayoutGuide key="safeArea" id="yOy-lh-YQE"/>
                     </view>
                     <connections>
-                        <outlet property="ActivityIND" destination="QkZ-cp-oFX" id="iWX-7n-MUE"/>
                         <outlet property="EnterTextField" destination="hhB-62-Crj" id="puu-Cs-GSq"/>
                         <outlet property="OKbut" destination="FOx-Dg-tdh" id="B98-Kr-yO3"/>
                         <outlet property="SegButton" destination="oIw-jm-Qjt" id="mjc-aU-qT8"/>
+                        <outlet property="activityind" destination="C1c-m0-D6M" id="7cE-2k-Cqp"/>
                         <outlet property="testlabel" destination="dHD-UP-OWs" id="NZZ-bQ-OrJ"/>
                     </connections>
                 </viewController>
@@ -497,25 +501,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVy-jN-5E2">
-                                                    <rect key="frame" x="16" y="31" width="97" height="14"/>
+                                                    <rect key="frame" x="20" y="31" width="62.5" height="13"/>
                                                     <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Уровень" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ylh-9C-Z3g">
-                                                    <rect key="frame" x="16" y="58" width="81.5" height="14.5"/>
+                                                    <rect key="frame" x="20" y="57" width="51.5" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Макс.уровень" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9j-ft-h3n">
-                                                    <rect key="frame" x="16" y="85.5" width="135" height="15.5"/>
+                                                    <rect key="frame" x="20" y="85.5" width="86" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pO-dj-2JZ">
-                                                    <rect key="frame" x="16" y="114" width="114" height="15"/>
+                                                    <rect key="frame" x="20" y="114" width="72.5" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="g0z-pT-iDc"/>
                                                     </constraints>
@@ -605,7 +609,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q02-hI-dhq">
-                                                    <rect key="frame" x="130.5" y="393" width="59" height="21"/>
+                                                    <rect key="frame" x="178" y="393" width="58.5" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="j7h-3H-jHo"/>
                                                     </constraints>
@@ -614,13 +618,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsn-NB-khV">
-                                                    <rect key="frame" x="128" y="31" width="64" height="25.5"/>
+                                                    <rect key="frame" x="175" y="31" width="64" height="25.5"/>
                                                     <fontDescription key="fontDescription" name="Supercell-Magic" family="Supercell-Magic" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FA7-ry-2iQ">
-                                                    <rect key="frame" x="10" y="91" width="300" height="237"/>
+                                                    <rect key="frame" x="57" y="91" width="300" height="237"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="300" id="Wqc-ke-MIx"/>
                                                         <constraint firstAttribute="height" constant="237" id="voz-ce-wE1"/>

@@ -11,32 +11,33 @@
 		AE14018D228E179900B2D7DE /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE14018C228E179900B2D7DE /* PlayersViewController.swift */; };
 		AE140191228E1F7900B2D7DE /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE140190228E1F7900B2D7DE /* PlayerModel.swift */; };
 		AE1AFB15228CCA8C002EC242 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1AFB14228CCA8C002EC242 /* CardsViewController.swift */; };
-		AE1D5299229559DD00D0F7B5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1D5298229559DD00D0F7B5 /* Constant.swift */; };
 		AE1D529D2295624100D0F7B5 /* Supercell-magic-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE1D529C2295624100D0F7B5 /* Supercell-magic-webfont.ttf */; };
 		AE1D529F2295636D00D0F7B5 /* Supercell-Magic_1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE1D529E2295636D00D0F7B5 /* Supercell-Magic_1.ttf */; };
 		AE225DAE228B93CF003A7C17 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE225DAD228B93CF003A7C17 /* CardModel.swift */; };
 		AE22AF5F2291DDA700BCE48E /* InfoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22AF5E2291DDA700BCE48E /* InfoPlayerViewController.swift */; };
 		AE22AF662292168000BCE48E /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22AF652292168000BCE48E /* MyCardViewController.swift */; };
 		AE22AF6822922A5B00BCE48E /* AchievmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE22AF6722922A5B00BCE48E /* AchievmentViewController.swift */; };
+		AE612DEB22A2E26F00414A2D /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE612DEA22A2E26F00414A2D /* Constant.swift */; };
 		AEB824CF2288DC04003DEC0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB824CE2288DC04003DEC0A /* AppDelegate.swift */; };
 		AEB824D12288DC04003DEC0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB824D02288DC04003DEC0A /* ViewController.swift */; };
 		AEB824D42288DC04003DEC0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB824D22288DC04003DEC0A /* Main.storyboard */; };
 		AEB824D72288DC04003DEC0A /* CourseWork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEB824D52288DC04003DEC0A /* CourseWork.xcdatamodeld */; };
 		AEB824D92288DC06003DEC0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB824D82288DC06003DEC0A /* Assets.xcassets */; };
 		AEB824DC2288DC06003DEC0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB824DA2288DC06003DEC0A /* LaunchScreen.storyboard */; };
+		AEC5245922A1777400E9D8F0 /* RObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC5245822A1777400E9D8F0 /* RObjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE14018C228E179900B2D7DE /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 		AE140190228E1F7900B2D7DE /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		AE1AFB14228CCA8C002EC242 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
-		AE1D5298229559DD00D0F7B5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		AE1D529C2295624100D0F7B5 /* Supercell-magic-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Supercell-magic-webfont.ttf"; path = "ClashSource/Supercell-magic-webfont.ttf"; sourceTree = SOURCE_ROOT; };
 		AE1D529E2295636D00D0F7B5 /* Supercell-Magic_1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Supercell-Magic_1.ttf"; path = "ClashSource/Supercell-Magic_1.ttf"; sourceTree = SOURCE_ROOT; };
 		AE225DAD228B93CF003A7C17 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		AE22AF5E2291DDA700BCE48E /* InfoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPlayerViewController.swift; sourceTree = "<group>"; };
 		AE22AF652292168000BCE48E /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
 		AE22AF6722922A5B00BCE48E /* AchievmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievmentViewController.swift; sourceTree = "<group>"; };
+		AE612DEA22A2E26F00414A2D /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = ../../../../../../.Trash/Constant.swift; sourceTree = "<group>"; };
 		AEB824CB2288DC04003DEC0A /* CourseWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CourseWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB824CE2288DC04003DEC0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEB824D02288DC04003DEC0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +46,7 @@
 		AEB824D82288DC06003DEC0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB824DB2288DC06003DEC0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEB824DD2288DC06003DEC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEC5245822A1777400E9D8F0 /* RObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RObjects.swift; sourceTree = "<group>"; };
 		B20C2DBD7C98FB8AA4ABC796 /* Pods-CourseWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseWork.release.xcconfig"; path = "Target Support Files/Pods-CourseWork/Pods-CourseWork.release.xcconfig"; sourceTree = "<group>"; };
 		E87E0F86D477B9CDD2BD37AA /* Pods-CourseWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CourseWork.debug.xcconfig"; path = "Target Support Files/Pods-CourseWork/Pods-CourseWork.debug.xcconfig"; sourceTree = "<group>"; };
 		FB3FB0CB507C024255A67954 /* Pods_CourseWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CourseWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +108,8 @@
 			children = (
 				AE225DAD228B93CF003A7C17 /* CardModel.swift */,
 				AE140190228E1F7900B2D7DE /* PlayerModel.swift */,
-				AE1D5298229559DD00D0F7B5 /* Constant.swift */,
+				AEC5245822A1777400E9D8F0 /* RObjects.swift */,
+				AE612DEA22A2E26F00414A2D /* Constant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,12 +278,13 @@
 				AE22AF662292168000BCE48E /* MyCardViewController.swift in Sources */,
 				AE140191228E1F7900B2D7DE /* PlayerModel.swift in Sources */,
 				AE1AFB15228CCA8C002EC242 /* CardsViewController.swift in Sources */,
+				AEC5245922A1777400E9D8F0 /* RObjects.swift in Sources */,
 				AEB824CF2288DC04003DEC0A /* AppDelegate.swift in Sources */,
 				AE22AF5F2291DDA700BCE48E /* InfoPlayerViewController.swift in Sources */,
 				AEB824D72288DC04003DEC0A /* CourseWork.xcdatamodeld in Sources */,
 				AE14018D228E179900B2D7DE /* PlayersViewController.swift in Sources */,
 				AE22AF6822922A5B00BCE48E /* AchievmentViewController.swift in Sources */,
-				AE1D5299229559DD00D0F7B5 /* Constant.swift in Sources */,
+				AE612DEB22A2E26F00414A2D /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

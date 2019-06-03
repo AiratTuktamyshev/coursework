@@ -8,108 +8,114 @@
 
 import UIKit
 import Kingfisher
+import RealmSwift
 
 class CardsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
     
     
     @IBOutlet weak var TableView: UITableView!
     
-    var request = URLRequest(url: clashURL)
-    
-    
+    var request = URLRequest(url: (URL(string:"https://api.clashroyale.com/v1/cards/"))!)
+
     var mycards:[ClashCards]=[]//для основного парсинга
-    var currentmycard:[ClashCards]=[]// Для поиска
     
-    var items: ItemsResponse?///для первичного парсинга
+    var itemsd:ItemsResponse = ItemsResponse(items:[])
+    
+    let realm = try! Realm()
+    var ritems:Results<CardsRealm>!//Контейнер со свойствами
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       ritems=realm.objects(CardsRealm.self)
+        //print(Realm.Configuration.defaultConfiguration.fileURL)
+       LoadCardJSON()
         
-        //запись из реалм
+    }
+            
+
         
-        loadCardJSON()
-        //запись в реалм
-        //вывод на экран
-        //релоад дата
+
+    func LoadRealm()
+    {
+
+        // тут я решил очень интересную проблему
+        var tempArray : [CardsRealm ] = []
+        
+            for s in mycards{
+            let temp = CardsRealm()
+            temp.name=s.name
+            temp.iconUrls=s.iconUrls.medium
+            temp.maxLevel=s.maxLevel
+            tempArray.append(temp)
+        }
+        
+        
+        try! realm.write {
+            realm.add(tempArray,update: .modified)
+        }
         
     }
     
-    func loadCardJSON(){
+    
+    
+    func LoadCardJSON(){
         //Распарсиваем json
         //var json:ItemsResponse!
         request.httpMethod="GET"
         request.httpBody=Data()
         request.addValue("contentType", forHTTPHeaderField: "Application/JSON")
-        request.setValue( "Bearer \(mykey)",forHTTPHeaderField:"Authorization")
+        request.setValue( "Bearer \(constant.mykey)",forHTTPHeaderField:"Authorization")
         
-        let clashTask=URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let clashTask=URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
+            guard let self = self else {return}
             if error==nil {
                 do {
-                    let json=try JSONDecoder().decode(ItemsResponse.self, from: data!)
-                    self.mycards=json.items//ЭТО ГЕНИАЛЬНО
                     
+                    let json=try JSONDecoder().decode(ItemsResponse.self, from: data!)
+                    self.mycards=json.items
                     
                     print(self.mycards)
                     
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async {//Насколько я понял,Реалм любит маин трейд
+                        self.LoadRealm()
                         self.TableView.reloadData()
                     }
-                    
                     
                 }
                 catch let error {print(error)}
             }
         }
         clashTask.resume()
-    }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return mycards.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell" )as? CardCell else {return UITableViewCell() }
-        cell.levelLabel.text = "Max level:" + String(mycards[indexPath.row].maxLevel)
-        cell.nameLabel.text="Name: "+mycards[indexPath.row].name
         
-
-        if let imageUrl=URL(string: mycards[indexPath.row].iconUrls.medium){
-            cell.imageCard.kf.indicatorType = .activity
-            cell.imageCard.kf.setImage(with:imageUrl, placeholder: nil, options: [.transition(.fade(0.7))],progressBlock: nil)
-            }
-        
-        
-        
-//        if let imageUrl=URL(string: mycards[indexPath.row].iconUrls.medium){
-//            DispatchQueue.global().async {
-//                let data = try? Data(contentsOf: imageUrl)
-//                if let data=data{
-//                    let image=UIImage(data:data)
-//                    DispatchQueue.main.async {
-//                        cell.imageCard.image=image
-//                    }
-//                }
-//            }
-//        }
-        return cell
-
-    }
+     }
     
     
-   
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+           return ritems.count
+        }
     
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CardCell" )as? CardCell else {return UITableViewCell() }
+            
+            cell.levelLabel.text = "Max level:"+String(ritems[indexPath.row].maxLevel)
+            cell.nameLabel.text="Name: "+ritems[indexPath.row].name!
     
-    /*
-    // MARK: - Navigation
+            if  let imageUrl=URL(string: ritems[indexPath.row].iconUrls!){
+                cell.imageCard.kf.indicatorType = .activity
+                cell.imageCard.kf.setImage(with:imageUrl, placeholder: nil, options: [.transition(.fade(0.7))],progressBlock: nil)
+                }
+            return cell
+    
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+    
 }
 
 

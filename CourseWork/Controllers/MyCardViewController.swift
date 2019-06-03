@@ -48,32 +48,9 @@ class MyCardViewController: UIViewController, UITableViewDelegate,UITableViewDat
             cell.myCardIMG.kf.indicatorType = .activity
             cell.myCardIMG.kf.setImage(with:imageUrl, placeholder: nil, options: [.transition(.fade(0.7))],progressBlock: nil)
         }
-//
-//        if let imageUrl=URL(string: mycards[indexPath.row].iconUrls.medium){
-//            DispatchQueue.global().async {
-//                let data = try? Data(contentsOf: imageUrl)
-//                if let data=data{
-//                    let image=UIImage(data:data)
-//                    DispatchQueue.main.async {
-//                        print("Карты работают")
-//                        //cell.myCardIMG.image=image
-//                        cell.myCardIMG.image=image
-//                    }
-//                }
-//            }
-//        }
         return cell
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 

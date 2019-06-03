@@ -33,10 +33,9 @@ struct  PlayerS: Decodable {
      var achievements:[Achiv]?//own type
      var cards:[PlayerCards]?//own type
      var currentFavouriteCard: CurrentFavourite?//own type
-////
-////    //дальше идут вложенные структуры
-//
-//
+
+   //дальше идут вложенные структуры
+
     struct  Arenas : Decodable {//owntype
         var id:Int
         var name:String
